@@ -1,0 +1,40 @@
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function Animal(name,speed,focus,distance){
+        this.name = name;
+        this.speed = speed;
+        this.focus = focus;
+        this.position = 0;
+        this.distance = distance;
+        this.time=Math.floor(this.distance/this.speed);
+        this.run=function(){
+            if(Math.random()*10<this.focus){
+                this.position+=this.speed;
+            };
+            console.log("It takes "+this.name+" "+this.time+ "mins to get to the endline");
+        };
+        this.report = function(){
+            console.log(this.name+" has run "+this.position);
+        };
+    }
+
+    var rabbit=new Animal("Bugsy",7,2,100);
+    var turtle=new Animal("Mo",2,8,100);
+
+
+ while(rabbit.position < 100&&turtle.position < 100){
+        rabbit.run();
+        turtle.run();
+
+        rabbit.report();
+        turtle.report();
+    }
+</script>
+
+</body>
+</html>
